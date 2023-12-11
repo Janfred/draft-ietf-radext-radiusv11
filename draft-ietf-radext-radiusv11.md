@@ -336,7 +336,7 @@ Values
 >>
 >> Server Behavior
 >>
->>> If the server receives no ALPN name from the client, it MAY reply with a TLS alert of "no_application_protocol" (120).  It MUST then close the TLS connection.
+>>> If the server receives no ALPN name from the client, it MUST close the TLS connection. It MAY reply with a TLS alert of "no_application_protocol" (120) prior to closing, see below for further discussion on this.
 >>>
 >>> If the server receives an ALPN name "radius/1.0" from the client, it MUST reply with a TLS alert of "no_application_protocol" (120), and then close the TLS connection.
 >>>
